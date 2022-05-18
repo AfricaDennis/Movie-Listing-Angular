@@ -1,0 +1,22 @@
+<h1>PRODUCER FORM</h1>
+<div class="container">
+    <div [hidden]="submitted">
+      <form (ngSubmit)="onSubmit()" [formGroup]="producerForm">
+        <div class="form-group">
+          <label for="name">Producer Name: </label>
+          <input type="text" class="form-control" formControlName="name" id="name" required >
+        </div>
+
+        <div class="from-group">
+            <label for="producer-fundation">Date Of The Fundation:</label>
+            <input type="date" class="form-control" formControlName="fundationDate" id="producer-fundation" required>
+        </div>
+
+        <button type="submit" class="btn btn-success" (click)="save()" [disabled]="!producerForm.valid">Submit</button>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+        <h2>SUCCESS!</h2>
+    </div>
+</div>

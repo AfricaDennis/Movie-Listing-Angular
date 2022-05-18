@@ -1,0 +1,66 @@
+<h1>MOVIE FORM</h1>
+<div class="container">
+    <div [hidden]="submitted">
+        <form (ngSubmit)="onSubmit()" [formGroup]="movieForm">
+            <input id="id" #movieId formControlName="id" hidden/>
+            <div class="form-group">
+                <label for="name">Movie Name: </label>
+                <input type="text" class="form-control" formControlName="name"  id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="movie-date">Movie Release:</label>
+                <input type="date" class="form-control" formControlName="releaseDate" id="movie-date"  required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="movie-duration">Movie Duration:</label>
+                <input type="number" class="form-control" formControlName="duration" id="movie-duration" required>
+            </div>
+
+            <div class="form-group">
+                <label for="movie-synopsis">Movie Synopsis:</label>
+                <textarea type="text" rows="8" cols="28" class="form-control synopsis" formControlName="synopsis"  id="movie-synopsis"  required></textarea>
+            </div>
+
+            <br>
+            <br>
+
+            
+
+            
+        <div class="form-group">
+            <label for="actor">Cast:</label>
+            <br>
+            <!-- <select multiple class="form-control multiSelect" #actor formControlName="actors" id="actor" required >
+                <option [value]="actor" *ngFor="let actor of actorsList">{{actor.name}}</option>
+            </select> -->
+
+            <ng-select class="form-control" [items]="actorsList" bindLabel="name" bindValue="id" [multiple]="true" placeholder="Choose an Actor" formControlName="actorIds">
+
+            </ng-select>
+
+        </div>
+
+        <div class="form-group">
+            <label for="producer">Producer:</label>
+            <br>
+            <!-- <select class="form-control" formControlName="producer" id="producer" required>
+                <option *ngFor="let producer of producersList" [value]="producer">{{producer.name}}</option>
+            </select> -->
+            <ng-select class="form-control" [items]="producersList" bindLabel="name" bindValue="id" [multiple]="true" placeholder="Choose a Producer" formControlName="producerIds">
+
+            </ng-select>
+        </div>
+
+            <button type="submit" class="btn btn-succes" (click)="save()" [disabled]="!movieForm.valid" >Submit</button>
+            <!-- <button type="button" class="btn btn-default" (click)="newMovie(); movieForm.reset()">New Movie</button> -->
+
+        </form>
+    </div>
+
+    <div [hidden]="!submitted">
+        <h2>SUCCESS!</h2>
+    </div>
+</div>

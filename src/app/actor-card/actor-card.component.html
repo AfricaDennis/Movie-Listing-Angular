@@ -1,0 +1,7 @@
+<div [class.selected]="actor === selectedActor" (click)="onSelect(actor)" class="btn">
+    <a>
+        <p class="badge" hidden>{{ actor.id }}</p>
+        <p class="name">{{ actor.name }}</p>
+    </a>
+    <i class="fa fa-trash fa-2x" aria-hidden="true" type="button" title="delete movie" (click)="delete(actor)"></i>
+</div>

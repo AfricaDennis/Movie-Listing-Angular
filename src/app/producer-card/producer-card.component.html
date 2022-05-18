@@ -1,0 +1,7 @@
+<div [class.selected]="producer === selectedProducer" (click)="onSelect(producer)" class="btn">
+    <a>
+        <p class="badge" hidden> {{ producer.id }}</p>
+        <p class="badge"> {{ producer.name }}</p>
+    </a>
+    <i class="fa fa-trash fa-2x" aria-hidden="true" type="button" title="delete movie" (click)="delete(producer)"></i>
+</div>

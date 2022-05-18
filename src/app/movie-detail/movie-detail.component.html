@@ -1,0 +1,42 @@
+<div *ngIf="movie" class="details">
+  <h1>{{ movie.name | uppercase }}</h1>
+  <div class="md-from">
+    <!-- <img ng-src="{{movie.image}}" alt=""> -->
+    <label for="movie-date">RELEASE DATE:</label>
+    <br />
+    <input
+      id="movie-date"
+      [(ngModel)]="movie.releaseDate"
+      placeholder="date"
+      #movieRelease
+    /><br /><br />
+    <label for="movie-duration">DURATION (min): </label>
+    <br />
+    <input
+      id="movie-duration"
+      [(ngModel)]="movie.duration"
+      placeholder="duration"
+      #movieDuration
+    /><br />
+    <br />
+    <br />
+    <label for="movie-synopsis">SYNOPSIS:</label>
+    <br />
+    <textarea
+      type="text"
+      rows="7"
+      cols="65"
+      id="movie-synopsis"
+      [(ngModel)]="movie.synopsis"
+      placeholder="synopsis"
+      #movieSynopsis
+    >
+    </textarea>
+  </div>
+  <br />
+  <div class="bottons">
+  <button class="btnBack" [disabled]="previousMovie == movie" (click)="goBack()">Previous movie</button>
+  <button class="btnBack" (click)="closeDetail()">Close</button>
+  <button class="btnBack" (click)="getDetails()"><a routerLink="/formMovie/{{movie.id}}">Update</a></button>
+</div>
+</div>

@@ -1,0 +1,12 @@
+<div *ngIf="producer" class="details">
+    <h1>{{producer.name | uppercase}}</h1>
+    <div class="md-from">
+        <label for="producer-fundation">FUNDATION:</label>
+        <br>
+        <input id="producer-fundation" [(ngModel)]="producer.fundationDate" placeholder="fundation">
+    </div>
+    <br>
+    <button class="btnBack" [disabled]="previousProducer == producer" (click)="goBack()">Pre Producer</button>
+    <button class="btnBack" (click)="closeDetail()">Close</button>
+    <button class="btnBack" (click)="getDetails()"><a routerLink="/formProducer/{{producer.id}}">Update</a></button>
+</div>

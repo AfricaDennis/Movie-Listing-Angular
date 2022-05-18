@@ -1,0 +1,48 @@
+ul {
+    list-style-type: none;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: black;
+    float: right;
+    font-size: 1.5rem;
+}
+
+li {
+    float: right;
+}   
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.nav li a:hover {
+    background-color: white;
+    color: black;
+}
+
+.nav li ul {
+    display:none;
+    position:absolute;
+    min-width:140px;
+}
+
+.nav li:hover > ul {
+    display: block;
+}
+
+.nav li ul li {
+    position:relative;
+}
+
+.nav li ul li ul {
+    right:-140px;
+    top:0px;
+}
+
+.disabled {
+    pointer-events: none;
+}

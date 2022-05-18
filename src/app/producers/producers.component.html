@@ -1,0 +1,11 @@
+<h1>PRODUCERS LISTING</h1>
+<div class="row">
+    <div class="col-md-12 style" *ngFor="let producer of producers">
+        <app-producer-card [producer]="producer" (onProducerSelected)="onSelect($event)" (onProducerDeleted)="delete($event)"></app-producer-card>
+    </div>
+</div>
+<div class="row">
+    <div *ngIf="selectedProducer">
+        <app-producer-detail [producerId]="selectedProducer"></app-producer-detail>
+    </div>
+</div>

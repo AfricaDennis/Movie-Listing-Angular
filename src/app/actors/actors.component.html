@@ -1,0 +1,11 @@
+<h1>ACTORS LISTING</h1>
+<div class="row">
+    <div class="col-md-12 style" *ngFor="let actor of actors">
+        <app-actor-card [actor]="actor" (onActorSelected)="onSelect($event)" (onActorDeleted)="delete($event)"></app-actor-card>
+    </div>
+</div>
+<div class="row">
+    <div *ngIf="selectedActor">
+        <app-actor-detail [actorId]="selectedActor"></app-actor-detail>
+    </div>
+</div>

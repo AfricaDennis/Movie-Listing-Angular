@@ -1,0 +1,52 @@
+*{
+    text-align: center;
+}
+input{
+    width: 20rem;
+    font-size: 1.2rem;
+    pointer-events: none;
+    
+}
+textarea{
+    width: 30rem;
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+label{
+    font-size: 1.5rem;
+}
+
+.details{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 40rem;
+    height: 37rem;
+    background-color: black;
+    color: #d5dbdb;
+    margin: 0 auto;
+}
+
+.btnBack{
+    width: 9rem;
+    height: 5rem;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    margin-inline: 2rem;
+}
+
+// button{
+//     display: inline-block;
+// }
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.btnBack:active{
+    background-color: grey;
+}
+.buttons{
+    display: inline;
+}

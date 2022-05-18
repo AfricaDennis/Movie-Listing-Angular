@@ -1,0 +1,15 @@
+<div *ngIf="actor" class="details">
+    <h1>{{actor.name | uppercase}}</h1>
+    <div class="md-from">
+        <label for="actor-birth">BIRTH:</label>
+        <br>
+        <input id="actor-birth" [(ngModel)]="actor.birthDate" placeholder="birth">
+        <br>
+        <br>
+
+    </div>
+    <br>
+    <button class="btnBack" [disabled]="previousActor == actor" (click)="goBack()">Previous Actor</button>
+    <button class="btnBack" (click)="closeDetail()">Close</button>
+    <button class="btnBack" (click)="getDetails()"><a routerLink="/formActor/{{actor.id}}">Update</a></button>
+</div>
