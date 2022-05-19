@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, tap, Observable, of } from 'rxjs';
+import { catchError, tap, Observable, of, map } from 'rxjs';
 import { Movie } from './movie';
 // import { MOVIES } from './mock-movies';
 
@@ -11,7 +11,7 @@ export class MovieService {
 
   private moviesUrl = 'https://localhost:44382/api/Movies';
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin' : '*'  }),
+    headers: new HttpHeaders({ 'Content-Type': 'application/json, text/html', 'Access-Control-Allow-Origin' : '*' }),
   };
   constructor(private http: HttpClient) {}
 
@@ -56,5 +56,7 @@ export class MovieService {
       catchError(this.handleError<Movie>('deleteMovie'))
     );
   }
+
+
 
 }

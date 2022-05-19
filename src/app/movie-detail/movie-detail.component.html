@@ -1,7 +1,9 @@
 <div *ngIf="movie" class="details">
   <h1>{{ movie.name | uppercase }}</h1>
   <div class="md-from">
-    <!-- <img ng-src="{{movie.image}}" alt=""> -->
+    <img style="width: 400px; height: 300px;" src="{{movie.image}}" alt="PhotoMovie">
+    <br>
+    <br>
     <label for="movie-date">RELEASE DATE:</label>
     <br />
     <input
