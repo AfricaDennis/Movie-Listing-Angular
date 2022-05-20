@@ -2,5 +2,8 @@
 @import '~font-awesome/css/font-awesome.css';
 
 body{
-    background-image: url("./images/background.jpg");
+    background-image: url("./images/backgroundFinal.jpg");
+    background-repeat: no-repeat ;
+    background-attachment: fixed;
+    background-size: cover;
 }
