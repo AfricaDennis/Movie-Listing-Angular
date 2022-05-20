@@ -14,11 +14,11 @@ export class ActorFormComponent implements OnInit{
 
   actorForm: FormGroup;
   actor:any;
-  isNewContext = true;
-  id: Number = 1;
+  isNewContext = false;
+  id: Number = 0;
 
   constructor(private location: Location, private route: ActivatedRoute, private actorService: ActorService) { 
-    let id = Number(this.route.snapshot.paramMap.get('id'));
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
 
     this.actorForm = new FormGroup({
       id: new FormControl(''),
@@ -26,12 +26,18 @@ export class ActorFormComponent implements OnInit{
       birthDate: new FormControl(''),
       image: new FormControl('')
     });
-    if (id == 0) return;
-    this.actorService.getActor(id).subscribe((actor) => {
-      this.isNewContext =false;
-      this.actor = actor;
-      this.setFormValues(actor);
-    });
+    
+    let id = Number(this.route.snapshot.paramMap.get('id'));
+    if (!id) {
+      this.isNewContext = true;
+      return;
+    } else {
+      this.actorService.getActor(id).subscribe((actor) => {
+        this.actor = actor;
+        this.setFormValues(actor);
+      });
+    }
+    this.id = id;  
   }
 
 

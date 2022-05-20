@@ -10,7 +10,8 @@ input{
 textarea{
     width: 30rem;
     font-size: 1.2rem;
-    pointer-events: none;
+    // pointer-events: painted;
+    overflow: scroll;
 }
 
 label{

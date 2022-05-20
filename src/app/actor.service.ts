@@ -36,15 +36,9 @@ export class ActorService {
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
-      this.log(`${operation} failed: ${error.message}`);
       return of(result as T);
     }
   }
-
-  private log(arg0: string) {
-    throw new Error('Method not implemented.');
-  }
-
 
   updateActor(actor: Actor, id: Number): Observable<any> {
     return this.http.put(`${this.actorsUrl}/${id}`, actor, this.httpOptions).pipe(

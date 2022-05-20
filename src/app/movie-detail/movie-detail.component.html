@@ -1,7 +1,7 @@
 <div *ngIf="movie" class="details">
   <h1>{{ movie.name | uppercase }}</h1>
   <div class="md-from">
-    <img style="width: 400px; height: 300px;" src="{{movie.image}}" alt="PhotoMovie">
+    <img style="  max-width: 38%; height: auto;" src="{{movie.image}}" alt="PhotoMovie">
     <br>
     <br>
     <label for="movie-date">RELEASE DATE:</label>
@@ -24,10 +24,10 @@
     <br />
     <label for="movie-synopsis">SYNOPSIS:</label>
     <br />
-    <textarea
+    <textarea readonly
       type="text"
       rows="7"
-      cols="65"
+      cols="62"
       id="movie-synopsis"
       [(ngModel)]="movie.synopsis"
       placeholder="synopsis"
@@ -39,6 +39,6 @@
   <div class="bottons">
   <button class="btnBack" [disabled]="previousMovie == movie" (click)="goBack()">Previous movie</button>
   <button class="btnBack" (click)="closeDetail()">Close</button>
-  <button class="btnBack" (click)="getDetails()"><a routerLink="/formMovie/{{movie.id}}">Update</a></button>
+  <button class="btnBack" (click)="getDetails()" routerLink="/formMovie/{{movie.id}}">Update</button>
 </div>
 </div>

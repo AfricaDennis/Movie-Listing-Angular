@@ -8,13 +8,7 @@ import { ActorService } from '../actor.service';
 import { Producer } from '../producer';
 import { ProducerService } from '../producer.service';
 import { Location } from '@angular/common';
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpEventType,
-  HttpProgressEvent,
-} from '@angular/common/http';
-import { map, Observable, ReplaySubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-movie-form',
@@ -35,9 +29,6 @@ export class MovieFormComponent implements OnInit {
   producersList: Producer[] = [];
   id: Number = 0;
   isNewContext = false;
-  base64Output: string | any;
-  imageList: any;
-  file: any;
 
   constructor(
     private location: Location,
@@ -79,12 +70,10 @@ export class MovieFormComponent implements OnInit {
         this.setFormValues(movie);
       });
     }
-    this.id = id;     
+    this.id = id;
 
     // SET THE FORM IF WE HAVE A MOVIE
   }
-
-
 
   ngOnInit(): void {
     this.getActors();
@@ -160,8 +149,4 @@ export class MovieFormComponent implements OnInit {
       this.movieService.addMovie(request).subscribe(() => this.goBack());
     }
   }
-
-
-
-  
 }
