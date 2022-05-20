@@ -27,6 +27,8 @@ import { ProducerService } from './producer.service';
 
 import {NgSelectModule, NgOption} from '@ng-select/ng-select';
 
+import { NgImageSliderModule } from 'ng-image-slider';
+
 
 
 
@@ -57,7 +59,8 @@ import {NgSelectModule, NgOption} from '@ng-select/ng-select';
     FormsModule,
     HttpClientModule, 
     ReactiveFormsModule,
-    NgSelectModule
+    NgSelectModule,
+    NgImageSliderModule
   ],
   providers: [
     MovieService,
