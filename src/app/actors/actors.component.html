@@ -1,14 +1,25 @@
 <h1>ACTORS LISTING</h1>
 <div class="col-md-4">
-    <ng-image-slider [infinite]="true" [autoSlide]="false" [imageSize]="{width: '762px', height: 442, space: 10}" class="carousel" [images]="imgCollection" #nav></ng-image-slider>
+  <ng-image-slider
+    [infinite]="true"
+    [autoSlide]="false"
+    [imageSize]="{ width: '762px', height: 442, space: 10 }"
+    class="carousel"
+    [images]="imgCollection"
+    #nav
+  ></ng-image-slider>
 </div>
 <div class="row">
-    <div class="col-md-12 style" *ngFor="let actor of actors">
-        <app-actor-card [actor]="actor" (onActorSelected)="onSelect($event)" (onActorDeleted)="delete($event)"></app-actor-card>
-    </div>
+  <div class="col-md-12 style" *ngFor="let actor of actors">
+    <app-actor-card
+      [actor]="actor"
+      (onActorSelected)="onSelect($event)"
+      (onActorDeleted)="delete($event)"
+    ></app-actor-card>
+  </div>
 </div>
 <div class="row">
-    <div *ngIf="selectedActor">
-        <app-actor-detail [actorId]="selectedActor"></app-actor-detail>
-    </div>
+  <div *ngIf="selectedActor">
+    <app-actor-detail [actorId]="selectedActor"></app-actor-detail>
+  </div>
 </div>

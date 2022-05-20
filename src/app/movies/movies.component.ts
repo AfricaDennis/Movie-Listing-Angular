@@ -7,15 +7,14 @@ import { MovieService } from '../movie.service';
   selector: 'app-movies',
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.scss'],
-  template: ``
+  template: ``,
 })
 export class MoviesComponent implements OnInit {
-
   // movies = MOVIES;
   movies: Movie[] = [];
   selectedMovie?: number;
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
     this.getMovies();
@@ -23,17 +22,16 @@ export class MoviesComponent implements OnInit {
 
   // onSelect(event: any): void {
   //   this.selectedMovie = movie;
-  // } 
+  // }
 
   onSelect(event: any): void {
-    console.log(event)
+    console.log(event);
     this.selectedMovie = event;
   }
 
-
   getMovies(): void {
     // this.movieService.getMovies().subscribe(movies => this.movies = movies);
-    this.movieService.getMovies().subscribe(movies => {
+    this.movieService.getMovies().subscribe((movies) => {
       this.movies = movies;
       console.log(this.movies);
     });
@@ -44,17 +42,20 @@ export class MoviesComponent implements OnInit {
     this.movies = this.movies.filter((f) => f.id != movieId);
   }
 
-
   imgCollection: Array<object> = [
     {
-      image: 'https://i.pinimg.com/originals/66/24/96/6624960f0062bd8b8845037c6776277c.jpg',
-      thumbImage: 'https://i.pinimg.com/originals/66/24/96/6624960f0062bd8b8845037c6776277c.jpg',
+      image:
+        'https://i.pinimg.com/originals/66/24/96/6624960f0062bd8b8845037c6776277c.jpg',
+      thumbImage:
+        'https://i.pinimg.com/originals/66/24/96/6624960f0062bd8b8845037c6776277c.jpg',
       alt: 'Malefica',
       title: 'Malefica',
     },
     {
-      image: 'https://i.pinimg.com/originals/86/c9/95/86c99524a11559e72accc219032ab135.jpg',
-      thumbImage: 'https://i.pinimg.com/originals/86/c9/95/86c99524a11559e72accc219032ab135.jpg',
+      image:
+        'https://i.pinimg.com/originals/86/c9/95/86c99524a11559e72accc219032ab135.jpg',
+      thumbImage:
+        'https://i.pinimg.com/originals/86/c9/95/86c99524a11559e72accc219032ab135.jpg',
       title: 'Let Me In',
       alt: 'Let Me In',
     },
@@ -65,8 +66,10 @@ export class MoviesComponent implements OnInit {
       alt: 'Harry Potter and the philosophers stone',
     },
     {
-      image: 'https://s3-eu-west-1.amazonaws.com/abandomedia/db/poster/db_posters_40846.jpg',
-      thumbImage: 'https://s3-eu-west-1.amazonaws.com/abandomedia/db/poster/db_posters_40846.jpg',
+      image:
+        'https://s3-eu-west-1.amazonaws.com/abandomedia/db/poster/db_posters_40846.jpg',
+      thumbImage:
+        'https://s3-eu-west-1.amazonaws.com/abandomedia/db/poster/db_posters_40846.jpg',
       title: 'Annabele',
       alt: 'Annabele',
     },
@@ -78,4 +81,3 @@ export class MoviesComponent implements OnInit {
     },
   ];
 }
-
